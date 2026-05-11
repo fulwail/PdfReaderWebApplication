@@ -1,0 +1,34 @@
+﻿services:
+  pdfreader.api:
+    image: pdfreader.api
+    restart: always
+    build:
+      context: .
+      dockerfile: PdfReader.Api/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - rabbitmq
+
+  pdfreader.worker:
+    image: pdfreader.worker
+    restart: always
+    build:
+      context: .
+      dockerfile: PdfReader.Worker/Dockerfile
+    depends_on:
+      - rabbitmq
+  
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    restart: always
+    environment:
+        - RABBITMQ_DEFAULT_USER=rabbituser
+        - RABBITMQ_DEFAULT_PASS=rabbitpassword
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    
+

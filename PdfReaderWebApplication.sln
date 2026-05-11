@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50F6A1A6-7AB8-4FFB-A838-99675EFFB9C7}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfReader.Worker", "PdfReader.Worker\PdfReader.Worker.csproj", "{84FF6042-EDAF-415A-97D8-A6F68C9137B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfReader.Api", "PdfReader.Api\PdfReader.Api.csproj", "{BEA773C2-1FD1-426F-BAA7-F8B67AD387DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfReader.Core", "PdfReader.Core\PdfReader.Core.csproj", "{7EBF6A36-8AA2-452B-96DC-28D7C8D40488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfReader.Infrastructure", "PdfReader.Infrastructure\PdfReader.Infrastructure.csproj", "{C7730D2D-F625-4A4F-BC52-DC326AE69FC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84FF6042-EDAF-415A-97D8-A6F68C9137B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84FF6042-EDAF-415A-97D8-A6F68C9137B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84FF6042-EDAF-415A-97D8-A6F68C9137B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84FF6042-EDAF-415A-97D8-A6F68C9137B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA773C2-1FD1-426F-BAA7-F8B67AD387DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA773C2-1FD1-426F-BAA7-F8B67AD387DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA773C2-1FD1-426F-BAA7-F8B67AD387DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA773C2-1FD1-426F-BAA7-F8B67AD387DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBF6A36-8AA2-452B-96DC-28D7C8D40488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBF6A36-8AA2-452B-96DC-28D7C8D40488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBF6A36-8AA2-452B-96DC-28D7C8D40488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBF6A36-8AA2-452B-96DC-28D7C8D40488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7730D2D-F625-4A4F-BC52-DC326AE69FC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7730D2D-F625-4A4F-BC52-DC326AE69FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7730D2D-F625-4A4F-BC52-DC326AE69FC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7730D2D-F625-4A4F-BC52-DC326AE69FC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
