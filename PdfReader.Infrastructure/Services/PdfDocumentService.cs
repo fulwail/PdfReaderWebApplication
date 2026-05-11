@@ -34,7 +34,7 @@ public class PdfDocumentService(PdfReaderDbContext context): IPdfDocumentService
         {
             return new PdfContentResponses()
             {
-                ErrorMessage = "File"
+                ErrorMessage = "Обработанный текст из документа не был найден"
             };
         };
         return new PdfContentResponses()
