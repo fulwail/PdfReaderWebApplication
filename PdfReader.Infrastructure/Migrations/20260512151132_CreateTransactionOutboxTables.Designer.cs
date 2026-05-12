@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PdfReader.Infrastructure.Context;
@@ -11,9 +12,11 @@ using PdfReader.Infrastructure.Context;
 namespace PdfReader.Infrastructure.Migrations
 {
     [DbContext(typeof(PdfReaderDbContext))]
-    partial class PdfReaderDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260512151132_CreateTransactionOutboxTables")]
+    partial class CreateTransactionOutboxTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -8,7 +8,7 @@ using PdfReader.Infrastructure.Services;
 namespace PdfReader.Api.Controllers;
 [ApiController]
 [Route("api/[controller]/[action]")]
-public class PdfReaderController(IPdfDocumentService service,IPublishEndpoint publishEndpoint): ControllerBase
+public class PdfReaderController(IPdfDocumentService service): ControllerBase
 {
     [HttpPost]
     public async Task<ActionResult<PdfDocumentInfo>> Upload(IFormFile  pdfDocument,CancellationToken stoppingToken)
@@ -16,27 +16,8 @@ public class PdfReaderController(IPdfDocumentService service,IPublishEndpoint pu
         if(pdfDocument.ContentType!="application/pdf")
             return BadRequest("Полученный файл не является pdf документом");
         
-        using var ms = new MemoryStream();
-        await pdfDocument.CopyToAsync(ms);
+        var pdfDocumentInfo = await service.Upload(pdfDocument, stoppingToken);
         
-        var document = new PdfDocumentEntity()
-        {
-            Id=Guid.NewGuid(),
-            FileName=pdfDocument.FileName,
-            Content=ms.ToArray(),
-            Status = ProcessingStatus.Uploaded,
-            CreatedAt=DateTime.Now,
-        };
-        
-       var pdfDocumentInfo= await service.Create(document);
-        await publishEndpoint.Publish(new PdfUploadedEvent()
-            {
-                DocumentId=document.Id,
-                FileContent = document.Content,
-                UploadedAt = document.CreatedAt
-                
-            },
-            stoppingToken);
         return Ok(pdfDocumentInfo);
     }
     

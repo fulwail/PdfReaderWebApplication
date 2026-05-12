@@ -26,7 +26,14 @@ builder.Services.AddMassTransit(x =>
         
         cfg.ConfigureEndpoints(context);
     });
+    x.AddEntityFrameworkOutbox<PdfReaderDbContext>(o =>
+    {
+        o.UsePostgres();
+        o.UseBusOutbox();
+        o.DuplicateDetectionWindow = TimeSpan.FromSeconds(30);
+    });
 });
+
 
 
 
