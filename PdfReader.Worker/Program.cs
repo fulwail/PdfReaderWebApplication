@@ -5,7 +5,6 @@ using PdfReader.Worker;
 using PdfReader.Worker.Consumers;
 
 var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddHostedService<Worker>();
 builder.Services.AddServices(builder.Configuration);
 var configurationRabbitMq = builder.Configuration.GetSection("RabbitMQ");
 
